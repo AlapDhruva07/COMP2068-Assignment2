@@ -1,3 +1,4 @@
+//This page is for login and registerd purpose
 const mongoose = require('mongoose')
 
 //Create the user schema
