@@ -50,6 +50,7 @@ app.use(session({
     saveUninitialized: true,
     resave: true
 }));
+//init passport authentication
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/', routes);
