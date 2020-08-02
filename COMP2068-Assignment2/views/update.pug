@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  if(!user)
+    h1 Please Login first!
+  
+  else
+      h1 Update Employee below
+      //Insert form
+      form(method='POST' action='/update')
+        div
+            h2 Update First Name
+            input(type='text' name='fname' value=employee.name)
+        div
+            h2 Update Last Name
+            input(type='text' name='lname' value=employee.name)
+        div
+            h2 Update Email
+            input(type='text' name='email' value=employee.name)
+        div
+            h2 Update Department
+            input(type='text' name='department' value=employee.department)
+        div
+            input(type='hidden' name='id' value=employee.id)
+            button(type='submit' value='Submit') Submit

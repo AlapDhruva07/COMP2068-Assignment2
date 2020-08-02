@@ -30,25 +30,40 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.js" />
+    <Content Include="models\employee.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="models\user.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="public\images\corporatelife.jpg" />
+    <Content Include="public\javascripts\delete.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="routes\index.js" />
     <Content Include="routes\users.js" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
+    <Content Include="views\employee.pug">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\footer.pug">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\index.pug" />
+    <Content Include="views\insert.pug">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\layout.pug" />
     <Content Include="views\error.pug" />
     <Content Include="views\login.pug">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\register.pug">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\update.pug">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\users.pug">

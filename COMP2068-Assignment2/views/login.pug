@@ -1,12 +1,15 @@
 extends layout
 
 block content
-  h1 Login Page
-  form(method='POST' action='/login')
-    fieldset
-        label(for='username') Username
-        input#username(type='text' name='username')
-    fieldset
-        label(for='password') Password
-        input#password(type='password' name='password')
-    input(type='submit' value='Login')
+  section
+    img(src='images/corporatelife.jpg' alt='employee_pic')
+    #login
+      h3 Login 
+      form(method='POST' action='/login')
+        fieldset
+            label(for='username') Username &nbsp;
+            input#username(type='text' name='username')
+        fieldset
+            label(for='password') Password &nbsp;
+            input#password(type='password' name='password')
+        input(type='submit' value='Login')
