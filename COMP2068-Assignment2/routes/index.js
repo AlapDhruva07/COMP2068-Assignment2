@@ -8,8 +8,22 @@ var employeeModel = require('../models/employee');
 var formidable = require('formidable');
 var fs = require('fs');
 var path = require('path');
+const fetch = require('node-fetch');
+
+let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=491923e22ad4402ca039c37a5773970e";
+
+let settings = { method: "Get" };
 
 
+router.get('/news', function (req, res) {
+    fetch(url, settings)
+        .then(res => res.json())
+        .then((json) => {
+            // do something with JSON
+            res.render('news', { mydata: json.articles, user: req.user});
+        });
+
+});
 
 router.get('/employee', function (req, res) {
     try {
@@ -130,7 +144,7 @@ router.post('/register', function (req, res) {
                 req.login(newUser, function (err) {
                     console.log('Trying to login');
                     if (err) console.log(err);
-                    return res.redirect('/users');
+                    return res.redirect('/employee');
                 });
             });
         });

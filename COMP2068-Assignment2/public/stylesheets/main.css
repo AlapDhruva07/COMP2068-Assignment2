@@ -70,6 +70,38 @@ section img {
     width: 90px;
 }
 
+footer{
+    position:relative;
+    height:90px;
+    width:100%;
+    background-color:darkslategray
+}
+
+    footer p {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+#article{
+    height:700px;
+    overflow:scroll;
+    width:100%;
+}
+
+#myarticle img {
+    width:auto;
+    height:450px;
+}
+
+#myarticle{
+    padding:20px;
+    background-color:white;
+    color:black;
+    margin:10px;
+}
+
 a {
     color: #00B7FF;
 }
