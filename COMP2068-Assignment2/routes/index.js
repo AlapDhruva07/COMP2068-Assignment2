@@ -8,14 +8,16 @@ var employeeModel = require('../models/employee');
 var formidable = require('formidable');
 var fs = require('fs');
 var path = require('path');
+//Library for using API - node-fetch
 const fetch = require('node-fetch');
-
+//Josn data link
 let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=491923e22ad4402ca039c37a5773970e";
 
 let settings = { method: "Get" };
 
-
+//Function for news.pub
 router.get('/news', function (req, res) {
+    //fetching JSON
     fetch(url, settings)
         .then(res => res.json())
         .then((json) => {
@@ -27,11 +29,11 @@ router.get('/news', function (req, res) {
 
 router.get('/employee', function (req, res) {
     try {
-        //Retrieve all articles if there is any 
+        //Retrieve all employees if there is any 
         employeeModel.find({}, function (err, foundEmployee) {
             console.log(err);
             console.log(foundEmployee);
-            //Pass found articles from server to pug file
+            //Pass found employee from server to pug file
             res.render('employee', { employee: foundEmployee, user: req.user });
         });
     } catch (err) {
@@ -59,9 +61,9 @@ router.post('/insert', function (req, res) {
         console.log('Parsed form.');
         //Update filename
         files.image.name = fields.name + '.' + files.image.name.split('.')[1];
-        //Create a new article using the Articles Model Schema
+        //Create a new article using the Employee Model Schema
         const article = new employeeModel({ firstname: fields.fname, lastname: fields.lname, email: fields.email, department: fields.department, image: files.image.name });
-        //Insert article into DB
+        //Insert Employee into DB
         article.save(function (err) {
             console.log(err);
         });
@@ -85,7 +87,7 @@ router.post('/insert', function (req, res) {
 router.get('/update/:id', function (req, res) {
     employeeModel.findById(req.params.id, function (err, foundArticle) {
         if (err) console.log(err);
-        //Render update page with specific article
+        //Render update page with specific employee
         res.render('update', { employee: foundArticle, user: req.user })
     })
 });
